@@ -1,0 +1,318 @@
+body {
+    background: url("../IMG/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    
+    
+    font-family: 'Shantell Sans', cursive;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+h1 {
+
+    font-size: 50px;
+    text-shadow: 0px 0px 5px #ffffff, 0px 0px 10px #ffffff, 0px 0px 10px #ffffff,
+    0px 0px 20px #ffffff;
+}
+
+h2 {
+    border: dashed rgb(0, 0, 0) 2px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    margin-top: 0;
+}
+.intro {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+}
+
+.intro p {
+    width: 60%;
+    background-color: rgba(255, 255, 255,.5);
+    border-radius: 20px;
+    padding: 20px;
+    
+}
+
+a {
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding-bottom: 10px; /*aby se mi zobrazilo podtržení linku s paddingem*/
+    font-size: 15px;
+    text-shadow: 0px 0px 5px #ffffff, 
+    0px 0px 10px #ffffff, 
+    0px 0px 10px #ffffff,
+    0px 0px 10px #ffffff,
+    0px 0px 20px #ffffff,
+    0px 0px 20px #ffffff,
+    0px 0px 20px #ffffff,
+    0px 0px 20px #ffffff;
+    font-weight: 100px;
+    
+}
+a:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 5px #1ea7e2, 0px 0px 10px #1ea7e2, 0px 0px 10px #1ea7e2,
+    0px 0px 20px #1ea7e2,0px 0px 20px #1ea7e2,0px 0px 20px #1ea7e2;
+}
+
+
+
+.vyber{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 20px 0;
+
+}
+
+.little_container {
+    border: solid 1px rgb(255, 255, 255);
+    padding: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+input[type="number"] {
+    width: 18%;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-auto-rows: minmax(150px, auto);
+    justify-content: space-around;
+    gap: 2rem;
+    align-content: center;
+    margin: 0 15px 0 15px;
+    text-align: justify;
+}
+
+
+.grid_container .first {
+    border: #ffffff solid 3px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    font-weight: 100;
+    font-size: 15px;
+    background-color: rgb(0, 0, 0);
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row:1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+    text-align: center;
+}
+
+.grid_container .first h3, .grid_container .firstt h3 {
+    color: white;
+}
+
+.grid_container .second {
+    border: rgb(255, 255, 255) solid 3px;
+    color: #000000;
+    font-weight: 100;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 1;
+    grid-row:1
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(226, 226, 226);
+}
+/* .grid_container .third {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(158, 255, 182);
+}
+.grid_container .thirdd {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(158, 255, 182);
+}
+.grid_container .fourth {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(130, 182, 255);
+}
+
+.grid_container .fifth {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 1;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(255, 250, 180);
+}
+
+.grid_container .fifthh {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(255, 250, 180);
+}
+
+.grid_container .sixth {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 3;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(241, 165, 73);
+}
+
+.grid_container .seventh {
+    border: rgb(255, 255, 255) solid 3px;
+    color: black;
+    border-radius: 10px;
+    font-size: 15px;
+    grid-column: 2;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+.seventh h3 {
+    color: white;
+} */
+
+
+.grid_container_polozky {
+    display: grid;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(10px, auto);
+    justify-content: space-around;
+    gap: 1rem;
+    align-content: center;
+    margin: 0 2px 0 2px;
+    text-align: justify;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.grid_container_polozky ul {
+padding: 0 0 0 0;
+margin: 0 0 0 0;
+}
+
+.grid_container_polozky ul li {
+list-style: none;
+}
+
+.ingredience {
+    color: #ffffff;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.result {
+    color: rgb(255, 255, 255);
+    margin-bottom: 5px;
+}
+
+.ingredience table {
+    /* text-align: center; */
+    text-align: center;
+    border-collapse: collapse;
+    margin: 8px;
+}
+
+.ingredience table tr td, .ingredience table tr th {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.partial_grid{
+    display: grid;
+    grid-auto-rows: minmax(150px, auto);
+    gap: 2rem;
+    margin: 0 2px 0 2px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+.grid_container_polozky2 {
+    display: grid;
+    border-radius: 10px;
+    grid-auto-rows: minmax(10px, auto);
+    justify-content: space-around;
+    column-gap: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+
+}
+.partial1 {
+    border: solid rgb(215, 215, 215) 3px;
+    border-radius: 10px;
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1;
+}
+
+.partial2 {
+    border: solid rgb(215, 215, 215) 3px;
+    border-radius: 10px;
+    padding: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 1;
+}
+
