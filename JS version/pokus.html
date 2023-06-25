@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="partial1">
+    Use to calculate price for one piece of mat where you craft a bulk (for example elemental
+    water):
+    <br>
+    <br>
+  
+    <form action="#" method="get">
+        <div class="little_container">
+            <label for="klara">Price of 1st mat: </label>
+            <input type="number" name="mat_1" id="klara" value="0">
+            <br>
+            <br>
+            <label for="simona">Amount of 1st mat: </label>
+            <input type="number" name="amount_1" id="simona" value="1">
+        </div>
+        <br>
+        <br>
+        <div class="little_container">
+            <label for="marie">Price of 2nd mat: </label>
+            <input type="number" name="mat_2" id="marie" value="0">
+            <br>
+            <br>
+            <label for="bozena">Amount of 2nd mat: </label>
+            <input type="number" name="amount_2" id="bozena" value="1">
+        </div>
+        <br>
+        <br>
+        <div class="little_container">
+            <label for="tatana">Price of 3rd mat: </label>
+            <input type="number" name="mat_3" id="tatana" value="0">
+            <br>
+            <br>
+            <label for="karolina">Amount of 3rd mat: </label>
+            <input type="number" name="amount_3" id="karolina" value="1">
+        </div>
+        <br>
+        <br>
+        <div class="little_container">
+            <label for="matej">How many items are in the bulk: </label>
+            <input type="number" name="nu_bulk" id="matej"" value=" 0">
+  
+        </div>
+        <div class="little_container">
+            <label for="sara">Number of items you want to craft: </label>
+            <input type="number" name="nu_mats" id="sara" value="0">
+  
+        </div>
+        <br>
+        <br>
+    </form>
+    <button onclick="calculate()">Calculate</button><br><br>
+  
+    <label for="priceForBulk">Price for Bulk:</label>
+    <span id="priceForBulk"></span><br>
+    
+    <label for="priceForOneItem">Price for One Item:</label>
+    <span id="priceForOneItem"></span><br>
+    
+    <label for="priceForAllItems">Price for All Items:</label>
+    <span id="priceForAllItems"></span><br>
+    </div>
+
+    <script src="pokus.js"></script>
+</body>
+</html>
+
