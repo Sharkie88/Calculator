@@ -115,24 +115,77 @@ function CalculatePartials()
 
 function priceAfterTaxes($ArgCurrentTax, $ArgFeeLevel)
 {   
-    $pricePerItem = $_GET["cena"];
-    $numberOfItems = $_GET["cislo"];
+    $priceofMat = $_GET["naklady"];
+    $sellingFor = $_GET["cena"];
+    $numberOfItems = $_GET["pocet"];
 
-    $FinalPriceWithoutTaxNoFormat = round($pricePerItem * $numberOfItems);
+    $FinalPriceWithoutTaxNoFormat = round($sellingFor * $numberOfItems);
     $FinalPriceWithoutTax = number_format($FinalPriceWithoutTaxNoFormat, 0, '', ' ');
 
-    $FinalPriceNoFormat = round(($pricePerItem * $numberOfItems) - ((($pricePerItem * $numberOfItems) / 100) * ($ArgCurrentTax * $ArgFeeLevel))); //musim zmenit
+    $FinalPriceNoFormat = round($FinalPriceWithoutTaxNoFormat - (($FinalPriceWithoutTaxNoFormat / 100) * ($ArgCurrentTax * $ArgFeeLevel))); // /100 kvuli procentualni taxe (kterou se to nasobi)
     $FinalPrice = number_format($FinalPriceNoFormat, 0, '', ' ');
 
-    $tax = round((($pricePerItem * $numberOfItems) / 100) * ($ArgCurrentTax * $ArgFeeLevel));
+    $taxNoFormat = round((($sellingFor * $numberOfItems) / 100) * ($ArgCurrentTax * $ArgFeeLevel));
+    $tax = number_format($taxNoFormat, 0, '', ' ');
+
+    $totalProfitNoFormat = round(($FinalPriceNoFormat) - ($priceofMat * $numberOfItems));
+    $totalProfit = number_format($totalProfitNoFormat, 0, '', ' ');
 
     echo "<br>";
     echo "Tax: $tax kinah";
     echo "<br>";
     echo "<br>";
-    echo "Total profit before taxes: <br> $FinalPriceWithoutTax kinah";
+    echo "Final price without taxes: <br> $FinalPriceWithoutTax kinah";
     echo "<br>";
     echo "<br>";
-    echo "Total profit after taxes: <br> $FinalPrice kinah";
+    echo "Final price with taxes: <br> $FinalPrice kinah";
+    echo "<br>";
+    echo "<br>";
+    echo "Total profit: $totalProfit";
 }
+
+
+function calculateTax($selectedTax, $selectedFee)
+{
+
+    if ($selectedTax == "5" && $selectedFee == "1") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.31, 1);
+
+    }
+    if ($selectedTax == "6" && $selectedFee == "1") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.32, 1);
+    }
+    if ($selectedTax == "7" && $selectedFee == "1") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.5, 1);
+    }
+    if ($selectedTax == "8" && $selectedFee == "1") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.5, 1);
+    }
+
+
+    //stejné, ale jiný fee lvl
+
+    if ($selectedTax == "5" && $selectedFee == "2") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.31, 2);
+    }
+
+    if ($selectedTax == "6" && $selectedFee == "2") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.32, 2);
+    }
+    if ($selectedTax == "7" && $selectedFee == "2") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.5, 2);
+    }
+    if ($selectedTax == "8" && $selectedFee == "2") {
+        //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
+        priceAfterTaxes(2.5, 2);
+    }
+}
+
 ?>
