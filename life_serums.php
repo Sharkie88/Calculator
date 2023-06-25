@@ -2,6 +2,7 @@
 require("./function_calculate.php");
 require("./table_ingredience.php");
 require("./crafts/life_serums.php");
+require("./partial_calculations.php");
 
 //select items you want to craft from crafts.php
 if (array_key_exists("SubmitCraft", $_GET)) {
@@ -134,7 +135,11 @@ if (array_key_exists("SubmitTax", $_GET)) {
 
                             <br>
                             <br>
-                            <label for="cena">Price for one item: </label>
+                            <label for="naklady">Price to craft one item: </label>
+                            <input type="number" name="cena" id="naklady">
+                            <br>
+                            <br>
+                            <label for="cena">Price you are selling one item for: </label>
                             <input type="number" name="cena" id="cena">
                             <br>
                             <br>
@@ -149,51 +154,11 @@ if (array_key_exists("SubmitTax", $_GET)) {
 
 
                         <div class="result">
-                            <?php
-                            if (isset($selectedTax) && isset($selectedFee)) {
-
-                                if ($selectedTax == "5" && $selectedFee == "1") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 1);
-
-                                }
-
-                                if ($selectedTax == "6" && $selectedFee == "1") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 1);
-                                }
-                                if ($selectedTax == "7" && $selectedFee == "1") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 1);
-                                }
-                                if ($selectedTax == "8" && $selectedFee == "1") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 1);
-                                }
-
-
-                                //stejné, ale jiný fee lvl
-                            
-                                if ($selectedTax == "5" && $selectedFee == "2") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 2);
-                                }
-
-                                if ($selectedTax == "6" && $selectedFee == "2") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 2);
-                                }
-                                if ($selectedTax == "7" && $selectedFee == "2") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 2);
-                                }
-                                if ($selectedTax == "8" && $selectedFee == "1") {
-                                    //2.5 = 2.5% tax (argumenty jsou (tax, fee_level))
-                                    priceAfterTaxes(2.5, 2);
-                                }
-
+                            <?php 
+                            if (isset($selectedTax) && isset($selectedFee))
+                            {
+                                calculateTax($selectedTax, $selectedFee);
                             }
-
                             ?>
                         </div>
                     </div>
