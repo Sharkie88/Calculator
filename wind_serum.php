@@ -1,7 +1,7 @@
 <?php
 require("./function_calculate.php");
 require("./table_ingredience.php");
-require("./crafts/wind_serums.php");
+require("./crafts/wind_scrolls.php");
 
 //select items you want to craft from crafts.php
 if (array_key_exists("SubmitCraft", $_GET)) {
@@ -27,7 +27,7 @@ if (array_key_exists("SubmitTax", $_GET)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>Wind Serums</title>
+    <title>Wind Scrolls</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@ if (array_key_exists("SubmitTax", $_GET)) {
             <a href="./wind.php">Wind Scrolls</a>
             <a href="./wind_serum.php">Wind Serums</a>
         </div>
-        <h2>Wind Serums</h2>
+        <h2>Wind Scrolls</h2>
     </header>
 
     <div class="grid_container">
@@ -171,11 +171,9 @@ if (array_key_exists("SubmitTax", $_GET)) {
                 <label for="craft">Select the item to craft:</label>
                 <select name="select_option" id="craft">
                     <option value="">Select</option>
-                    <option value="lesser_life_pot">Lesser Wind Serum</option>
-                    <option value="life_pot">Wind Serum</option>
-                    <option value="greater_life_pot">Greater Wind Serum</option>
-                    <option value="major_life_pot">Major Wind Serum</option>
-                    <option value="superior_life_serum">Super Wind Serum</option>
+                    <option value="lesser_life_pot">Lesser Raging Wind Scroll</option>
+                    <option value="life_pot">Raging Wind Scroll</option>
+                    <option value="greater_life_pot">Greater Raging Wind Scroll</option>
                 </select>
 
                 <input type="submit" name="SubmitCraft" value="Send">
@@ -186,38 +184,26 @@ if (array_key_exists("SubmitTax", $_GET)) {
             if (isset($selectedCraft)) {
                 //toto se zobrazí, pokud si uživatel vybere jednu z možností, co chce craftovat a odešle
                 if ($selectedCraft == "lesser_life_pot") {
-                    lesser_wind_serum_view();
+                    lesser_wind_scroll_view();
                 }
                 if ($selectedCraft == "life_pot") {
-                    wind_serum_view();
+                    common_wind_scroll_view();
                 }
                 if ($selectedCraft == "greater_life_pot") {
-                    greater_wind_serum_view();
-                }
-                if ($selectedCraft == "major_life_pot") {
-                    major_wind_serum_view();
-                }
-                if ($selectedCraft == "superior_life_serum") {
-                    superior_wind_serum_view();
+                    greater_wind_scroll_view();
                 }
 
             }
 
             //toto se zobrazí, pokud si uživatel vybral možnost, co craftovat a vyplnil formulář craftu
-            if (array_key_exists("submit_lesser_life_serum", $_GET)) {
-                if_lesser_wind_serum();
+            if (array_key_exists("submit_lesser_wind_scroll", $_GET)) {
+                if_lesser_wind_scroll();
             }
-            if (array_key_exists("submit_life_serum", $_GET)) {
-                if_wind_serum();
+            if (array_key_exists("submit_common_wind_scroll", $_GET)) {
+                if_common_wind_scroll();
             }
-            if (array_key_exists("submit_greater_life_serum", $_GET)) {
-                if_greater_wind_serum();
-            }
-            if (array_key_exists("submit_major_life_serum", $_GET)) {
-                if_major_wind_serum();
-            }
-            if (array_key_exists("superior_life_serum", $_GET)) {
-                if_superior_wind_serum();
+            if (array_key_exists("submit_greater_wind_scroll", $_GET)) {
+                if_greater_wind_scroll();
             }
 
 
