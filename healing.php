@@ -2,7 +2,6 @@
 require("./function_calculate.php");
 require("./table_ingredience.php");
 require("./crafts/healing_pots.php");
-require("./partial_calculations.php");
 
 //select items you want to craft from crafts.php
 if (array_key_exists("SubmitCraft", $_GET)) {
@@ -14,7 +13,7 @@ if (array_key_exists("SubmitCraft", $_GET)) {
 if (array_key_exists("SubmitTax", $_GET)) {
     $selectedTax = $_GET["select_tax"];
     $pricePerItem = $_GET["cena"];
-    $numberOfItems = $_GET["cislo"];
+    $numberOfItems = $_GET["pocet"];
     $selectedFee = $_GET["select_fee_level"];
 }
 
@@ -138,15 +137,15 @@ if (array_key_exists("SubmitTax", $_GET)) {
                             <br>
                             <br>
                             <label for="naklady">Price to craft one item: </label>
-                            <input type="number" name="cena" id="naklady">
+                            <input type="number" name="naklady" id="naklady">
                             <br>
                             <br>
                             <label for="cena">Price you are selling one item for: </label>
                             <input type="number" name="cena" id="cena">
                             <br>
                             <br>
-                            <label for="cislo">Number of items: </label>
-                            <input type="number" name="cislo" id="cislo">
+                            <label for="pocet">Number of items: </label>
+                            <input type="number" name="pocet" id="pocet">
                             <br>
                             <br>
 
